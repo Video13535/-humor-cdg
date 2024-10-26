@@ -61,7 +61,7 @@ select{
   color: #4f6270;
 }
 ::placeholder {
-  font-weight: 435;
+  font-weight: 500;
   color: #6d7d8f;
 }
 .input-field:focus {
@@ -221,11 +221,12 @@ display: none;
 
 #eye {
   position: absolute;
-  right: 10px;
-  top: 50%;
+  fint-size:17px;
+  right: 15px;
+  top: 40%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #6d7d8f;
+  color: #4f6270;
 }
 
 
