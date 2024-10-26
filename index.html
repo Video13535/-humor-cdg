@@ -60,19 +60,33 @@ this.classList.remove('loading');
 });
 </script>
 <script>
-  const eye = document.getElementById('eye');
-  const passwordInput = document.getElementById('clave');
-  passwordInput.type = 'password'; // Ocultar contraseña por defecto
-  eye.className = 'fas fa-eye-slash'; // Icono de ojo cerrado por defecto
-  eye.addEventListener('click', () => {
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      eye.className = 'fas fa-eye';
-    } else {
-      passwordInput.type = 'password';
-      eye.className = 'fas fa-eye-slash';
-    }
-  });
+const eye = document.getElementById('eye');
+const passwordInput = document.getElementById('clave');
+const emailInput = document.getElementById('usuario');
+
+passwordInput.type = 'password'; 
+eye.className = 'fas fa-eye-slash'; 
+eye.style.display = 'none'; 
+
+passwordInput.addEventListener('focus', () => {
+  eye.style.display = 'block';
+});
+
+emailInput.addEventListener('focus', () => {
+  if (passwordInput.value === '') {
+    eye.style.display = 'none';
+  }
+});
+
+eye.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    eye.className = 'fas fa-eye';
+  } else {
+    passwordInput.type = 'password';
+    eye.className = 'fas fa-eye-slash';
+  }
+});
 </script>
   </body>
 </html>
